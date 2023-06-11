@@ -98,7 +98,7 @@ public class RecipieListActivity extends AppCompatActivity {
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                         //Toast.makeText(RecipieListActivity.this,String.valueOf(id), Toast.LENGTH_SHORT).show();
-                        Intent i= new Intent(RecipieListActivity.this,RecipeInfo.class);
+                        Intent i= new Intent(RecipieListActivity.this,RecipeDetailActivity.class);
                         i.putExtra("id",s2_id.get(position));
                         startActivity(i);
 

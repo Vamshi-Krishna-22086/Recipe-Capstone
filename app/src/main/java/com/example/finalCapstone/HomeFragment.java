@@ -67,7 +67,7 @@ public class HomeFragment extends Fragment {
                 recipeday.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent i= new Intent(getContext(),RecipeInfo.class);
+                        Intent i= new Intent(getContext(),RecipeDetailActivity.class);
                         i.putExtra("id",rel);
                         startActivity(i);
                     }
