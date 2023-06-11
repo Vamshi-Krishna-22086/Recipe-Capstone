@@ -13,7 +13,10 @@
         <item>Shrimp</item>
 
     </string-array>
-    <!-- TODO: Remove or change this placeholder text -->
+
+    <!--  Login question texts-->
+    <string name="preferred_cuisine">Do you have any preferred cuisines?</string>
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="appName">Give me a Recipe</string>
 

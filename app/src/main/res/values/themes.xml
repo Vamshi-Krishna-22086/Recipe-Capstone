@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.Basic" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="Theme.Basic" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/pink</item>
@@ -20,5 +20,13 @@
         <item name="android:windowActivityTransitions">true</item>
         <item name="android:windowEnterTransition">@transition/trans_anim</item>
 <!--        <item name="android:windowExitTransition">@transition/trans_anim</item>-->
+    </style>
+
+<!--    Filter chip style-->
+    <style name="CustomFilterChip" parent="Widget.MaterialComponents.Chip.Filter">
+        <item name="chipBackgroundColor">@color/filter_chip_background</item>
+        <item name="android:textColor">@color/filter_chip_text</item>
+        <item name="checkedIconTint">@color/white</item>
+        <item name="rippleColor">@color/whiteAlpha</item>
     </style>
 </resources>

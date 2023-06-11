@@ -1,294 +1,402 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".LoginQuestion3">
 
-    <TextView
-        android:id="@+id/text"
+    <LinearLayout
+        android:orientation="horizontal"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp"
-        android:text="Please tell us about your preferred cuisines?"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="24dp" />
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="@string/preferred_cuisine"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
 
     <ScrollView
+        android:paddingStart="15dp"
+        android:paddingEnd="5dp"
+        android:layout_marginTop ="15dp"
         android:layout_width="match_parent"
-        android:layout_height="500dp"
-        android:layout_marginTop="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text">
+        android:layout_weight="1"
+        android:layout_height="0dp">
 
         <LinearLayout
-            android:id="@+id/cuisineLL"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:orientation="vertical"
-            android:paddingLeft="20dp"
-            app:layout_constraintTop_toBottomOf="@+id/text"
-            tools:layout_editor_absoluteX="0dp">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-            <CheckBox
-                android:id="@+id/all"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:minWidth="100dp"
-                android:onClick="onChecked"
-                android:text="All Cuisines"
-                android:textSize="20sp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
 
-            <CheckBox
-                android:id="@+id/uk"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:minWidth="100dp"
-                android:onClick="onChecked"
-                android:text="UK"
-                android:textSize="20sp" />
+                <TextView
+                    android:paddingStart="10dp"
+                    android:paddingEnd="0dp"
+                    android:text="Asia"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
 
-            <CheckBox
-                android:id="@+id/us"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:minWidth="100dp"
-                android:onClick="onChecked"
-                android:text="US"
-                android:textSize="20sp" />
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/asia_chip_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-            <CheckBox
-                android:id="@+id/italian"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:minWidth="100dp"
-                android:onClick="onChecked"
-                android:text="Italian"
-                android:textSize="20sp" />
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_chinese"
+                        android:text="Chinese and Mongolian"
+                        android:textSize="18dp"
+                        style="@style/CustomFilterChip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_india"
+                        android:text="Indian subcontinent"
+                        android:textSize="18dp"
+                        style="@style/CustomFilterChip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_japan"
+                        android:text="Japanese"
+                        android:textSize="18dp"
+                        style="@style/CustomFilterChip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_korea"
+                        android:text="Korean"
+                        android:textSize="18dp"
+                        style="@style/CustomFilterChip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_middle_east"
+                        android:text="Middle Eastern"
+                        android:textSize="18dp"
+                        style="@style/CustomFilterChip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_south_east_asia"
+                        android:text="Southeast Asian"
+                        android:textSize="18dp"
+                        style="@style/CustomFilterChip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_thai"
+                        android:text="Thai"
+                        android:textSize="18dp"
+                        style="@style/CustomFilterChip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
 
-            <CheckBox
-                android:id="@+id/spanishAndPortuguese"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:minWidth="100dp"
-                android:onClick="onChecked"
-                android:text="Spanish and Portuguese"
-                android:textSize="20sp" />
+                </com.google.android.material.chip.ChipGroup>
 
-            <CheckBox
-                android:id="@+id/thai"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:minWidth="100dp"
-                android:onClick="onChecked"
-                android:text="Thai"
-                android:textSize="20sp" />
+            </LinearLayout>
 
-            <CheckBox
-                android:id="@+id/southEastAsian"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:minWidth="100dp"
-                android:onClick="onChecked"
-                android:text="Southeast Asian"
-                android:textSize="20sp" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/teal_200"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"/>
 
-            <CheckBox
-                android:id="@+id/southAmerican"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:minWidth="100dp"
-                android:onClick="onChecked"
-                android:text="South American"
-                android:textSize="20sp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
 
-            <CheckBox
-                android:id="@+id/scandinavian"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:minWidth="100dp"
-                android:onClick="onChecked"
-                android:text="Scandinavian"
-                android:textSize="20sp" />
+                <TextView
+                    android:paddingLeft="10dp"
+                    android:text="Europe"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
 
-            <CheckBox
-                android:id="@+id/restAfrica"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:minWidth="100dp"
-                android:onClick="onChecked"
-                android:text="Rest Africa"
-                android:textSize="20sp" />
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/europe_chip_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-            <CheckBox
-                android:id="@+id/northernAfrica"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:minWidth="100dp"
-                android:onClick="onChecked"
-                android:text="Northern Africa"
-                android:textSize="20sp" />
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_belgian"
+                        android:text="Belgian"
+                        android:textSize="18dp"
+                        style="@style/CustomFilterChip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_deutschland"
+                        android:text="Deutschland"
+                        android:textSize="18dp"
+                        style="@style/CustomFilterChip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_east_europe"
+                        android:text="Eastern Europe"
+                        android:textSize="18dp"
+                        style="@style/CustomFilterChip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_french"
+                        android:text="French"
+                        android:textSize="18dp"
+                        style="@style/CustomFilterChip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_greek"
+                        android:text="Greek"
+                        android:textSize="18dp"
+                        style="@style/CustomFilterChip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_irish"
+                        android:text="Irish"
+                        android:textSize="18dp"
+                        style="@style/CustomFilterChip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_italy"
+                        android:text="Italian"
+                        android:textSize="18dp"
+                        style="@style/CustomFilterChip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_scandinavia"
+                        android:text="Scandinavian"
+                        android:textSize="18dp"
+                        style="@style/CustomFilterChip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_span_portugal"
+                        android:text="Spanish and Portuguese"
+                        android:textSize="18dp"
+                        style="@style/CustomFilterChip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_uk"
+                        android:text="UK"
+                        android:textSize="18dp"
+                        style="@style/CustomFilterChip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
 
-            <CheckBox
-                android:id="@+id/middleEastern"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:minWidth="100dp"
-                android:onClick="onChecked"
-                android:text="Middle Eastern"
-                android:textSize="20sp" />
+                </com.google.android.material.chip.ChipGroup>
 
-            <CheckBox
-                android:id="@+id/mexican"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:minWidth="100dp"
-                android:onClick="onChecked"
-                android:text="Mexican"
-                android:textSize="20sp" />
+            </LinearLayout>
 
-            <CheckBox
-                android:id="@+id/korean"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:minWidth="100dp"
-                android:onClick="onChecked"
-                android:text="Korean"
-                android:textSize="20sp" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/teal_200"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"/>
 
-            <CheckBox
-                android:id="@+id/japanese"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:minWidth="100dp"
-                android:onClick="onChecked"
-                android:text="Japanese"
-                android:textSize="20sp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
 
-            <CheckBox
-                android:id="@+id/irish"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:minWidth="100dp"
-                android:onClick="onChecked"
-                android:text="Irish"
-                android:textSize="20sp" />
+                <TextView
+                    android:paddingLeft="10dp"
+                    android:text="North America"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
 
-            <CheckBox
-                android:id="@+id/indianSubcontinent"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:minWidth="100dp"
-                android:onClick="onChecked"
-                android:text="Indian Subcontinent"
-                android:textSize="20sp" />
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/north_america_chip_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-            <CheckBox
-                android:id="@+id/greek"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:minWidth="100dp"
-                android:onClick="onChecked"
-                android:text="Greek"
-                android:textSize="20sp" />
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_canada"
+                        android:text="Canadian"
+                        android:textSize="18dp"
+                        style="@style/CustomFilterChip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_caribbean"
+                        android:text="Caribbean"
+                        android:textSize="18dp"
+                        style="@style/CustomFilterChip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_central_america"
+                        android:text="Central American"
+                        android:textSize="18dp"
+                        style="@style/CustomFilterChip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_mexico"
+                        android:text="Mexican"
+                        android:textSize="18dp"
+                        style="@style/CustomFilterChip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_us"
+                        android:text="US"
+                        android:textSize="18dp"
+                        style="@style/CustomFilterChip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
 
-            <CheckBox
-                android:id="@+id/french"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:minWidth="100dp"
-                android:onClick="onChecked"
-                android:text="French"
-                android:textSize="20sp" />
+                </com.google.android.material.chip.ChipGroup>
 
-            <CheckBox
-                android:id="@+id/easternEuropean"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:minWidth="100dp"
-                android:onClick="onChecked"
-                android:text="Eastern European"
-                android:textSize="20sp" />
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/teal_200"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"/>
 
-            <CheckBox
-                android:id="@+id/deutschland"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:minWidth="100dp"
-                android:onClick="onChecked"
-                android:text="Deutschland"
-                android:textSize="20sp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
 
-            <CheckBox
-                android:id="@+id/chineseAndMongolian"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:minWidth="100dp"
-                android:onClick="onChecked"
-                android:text="Chinese and Mongolian"
-                android:textSize="20sp" />
+                <TextView
+                    android:paddingLeft="10dp"
+                    android:text="Africa"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
 
-            <CheckBox
-                android:id="@+id/centralAmerican"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:minWidth="100dp"
-                android:onClick="onChecked"
-                android:text="Central American"
-                android:textSize="20sp" />
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/africa_chip_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-            <CheckBox
-                android:id="@+id/caribbean"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:minWidth="100dp"
-                android:onClick="onChecked"
-                android:text="Caribbean"
-                android:textSize="20sp" />
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_north_africa"
+                        android:text="Northern Africa"
+                        android:textSize="18dp"
+                        style="@style/CustomFilterChip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_rest_africa"
+                        android:text="Rest Africa"
+                        android:textSize="18dp"
+                        style="@style/CustomFilterChip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
 
-            <CheckBox
-                android:id="@+id/canadian"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:minWidth="100dp"
-                android:onClick="onChecked"
-                android:text="Canadian"
-                android:textSize="20sp" />
+                </com.google.android.material.chip.ChipGroup>
 
-            <CheckBox
-                android:id="@+id/belgian"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:minWidth="100dp"
-                android:onClick="onChecked"
-                android:text="Belgian"
-                android:textSize="20sp" />
+            </LinearLayout>
 
-            <CheckBox
-                android:id="@+id/australian"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:minWidth="100dp"
-                android:onClick="onChecked"
-                android:text="Australian"
-                android:textSize="20sp" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/teal_200"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"/>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:paddingLeft="10dp"
+                    android:text="Australia"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/australia_chip_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_australia"
+                        android:text="Australian"
+                        android:textSize="18dp"
+                        style="@style/CustomFilterChip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </com.google.android.material.chip.ChipGroup>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/teal_200"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:paddingLeft="10dp"
+                    android:text="South America"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/south_america_chip_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_south_america"
+                        android:text="South American"
+                        android:textSize="18dp"
+                        style="@style/CustomFilterChip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </com.google.android.material.chip.ChipGroup>
+
+            </LinearLayout>
 
         </LinearLayout>
-
     </ScrollView>
 
     <RelativeLayout
         android:id="@+id/relativeLayout2"
         android:layout_width="match_parent"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
         android:layout_height="?attr/actionBarSize"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -299,7 +407,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:text="Prev"
+            android:backgroundTint="@color/pink"
+            android:text="Back"
             android:textColor="@color/white" />
 
         <TextView
@@ -315,27 +424,49 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
+            android:backgroundTint="@color/pink"
             android:text="next"
             android:textColor="@color/white" />
 
     </RelativeLayout>
-<!--    <LinearLayout-->
-<!--        android:id="@+id/linearLayout"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginBottom="15dp"-->
-<!--        android:gravity="center"-->
-<!--        android:orientation="horizontal"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        tools:layout_editor_absoluteX="0dp">-->
 
-<!--        <TextView-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:text="3/3"-->
-<!--            android:textSize="15sp"-->
-<!--            android:textStyle="italic" />-->
 
-<!--    </LinearLayout>-->
+    <!--    <com.google.android.material.chip.ChipGroup-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content">-->
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!--        <com.google.android.material.chip.Chip-->
+    <!--            android:text="Asian"-->
+    <!--            android:textSize="18dp"-->
+    <!--            style="@style/CustomFilterChip"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:checked="true"/>-->
+    <!--        <com.google.android.material.chip.Chip-->
+    <!--            android:text="Mexican"-->
+    <!--            android:textSize="18dp"-->
+    <!--            style="@style/CustomFilterChip"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"/>-->
+    <!--        <com.google.android.material.chip.Chip-->
+    <!--            android:text="South Indian"-->
+    <!--            android:textSize="18dp"-->
+    <!--            style="@style/CustomFilterChip"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"/>-->
+    <!--        <com.google.android.material.chip.Chip-->
+    <!--            android:text="Egyptian"-->
+    <!--            android:textSize="18dp"-->
+    <!--            style="@style/CustomFilterChip"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"/>-->
+    <!--        <com.google.android.material.chip.Chip-->
+    <!--            android:text="Italian"-->
+    <!--            android:textSize="18dp"-->
+    <!--            style="@style/CustomFilterChip"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"/>-->
+
+    <!--    </com.google.android.material.chip.ChipGroup>-->
+
+</LinearLayout>

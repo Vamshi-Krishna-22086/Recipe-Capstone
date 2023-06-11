@@ -19,5 +19,7 @@
     <color name="pink">#f469a9</color>
     <color name="blue">#88bef5</color>
 
+    <color name="mediumGrey">#50D1D1D1</color>
+    <color name="whiteAlpha">#10FFFFFF</color>
 
 </resources>
