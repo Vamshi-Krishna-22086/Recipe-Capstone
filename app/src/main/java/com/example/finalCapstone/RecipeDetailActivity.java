@@ -44,8 +44,10 @@ import retrofit2.http.Url;
 
 public class RecipeDetailActivity extends Activity {
     public List<String> tileNames = new ArrayList<String>(Arrays.asList("Protein : ","Calories : ","Total-Time : ", "Servings : ","Cuisine : "));
+    //public List<String> tileNames = new ArrayList<String>(Arrays.asList("Total-Time : ", "Servings : ","Cuisine : "));
     String[] ingdreintList;
     public List<Integer> iconList = new ArrayList<Integer>(Arrays.asList(R.drawable.protien,R.drawable.calories,R.drawable.cooktime,R.drawable.servings,R.drawable.cuisine));
+    //public List<Integer> iconList = new ArrayList<Integer>(Arrays.asList(R.drawable.cooktime,R.drawable.servings,R.drawable.cuisine));
     TextView title;
     Intent intent;
     ImageView v;
@@ -98,7 +100,8 @@ public class RecipeDetailActivity extends Activity {
                 // TODO :: SHOW INSTRUCTIONS IN A CLEANER WAY
 
                 TextView textView=((TextView)(findViewById(R.id.instructions)));
-                ((TextView)(findViewById(R.id.instructions))).setText(unProcessed.replace(';','\n'));
+                unProcessed = unProcessed.replace(';','\n');
+                ((TextView)(findViewById(R.id.instructions))).setText(unProcessed.replace('.','\n'));
 
             }
         };
@@ -109,9 +112,10 @@ public class RecipeDetailActivity extends Activity {
                 String utensils = result.getString("6");
 //                Log.d("DetailPage", Arrays.toString(ingdreintList));
                 String[] utensilArr= utensils.split("\\|\\|");
-                ((TextView)(findViewById(R.id.cuisineText))).setText(result.getString("4"));
+                String region = "Region : "+result.getString("4");
+                ((TextView)(findViewById(R.id.cuisineText))).setText(region);
 
-                for(int i = 0 ; i < 4; i++)
+                for(int i = 2 ; i < 4; i++)
                 {
                     tileModelArrayList.add(new TileModel(tileNames.get(i),result.getString(""+i),iconList.get(i)));
                 }
