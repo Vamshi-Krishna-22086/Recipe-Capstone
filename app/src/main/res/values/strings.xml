@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">finalCapstone</string>
+    <string-array name="ingredients">
+        <item>Peanuts</item>
+        <item>Dates</item>
+        <item>Egg plant</item>
+        <item>Milk</item>
+        <item>Fish</item>
+        <item>Soya bean</item>
+        <item>Mustard</item>
+        <item>Crab</item>
+        <item>Lobster</item>
+        <item>Shrimp</item>
+
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="appName">Give me a Recipe</string>
+
+
+</resources>

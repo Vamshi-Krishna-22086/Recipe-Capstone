@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "391849080387",
+    "project_id": "gimme-a-recipe-29d3f",
+    "storage_bucket": "gimme-a-recipe-29d3f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:391849080387:android:5879b07df42fa8ca8b86f6",
+        "android_client_info": {
+          "package_name": "com.example.finalCapstone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "391849080387-vh5flpd87a5muokhvigrindc0pkekul2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1hJ_blgIjtmzSYzLSEbbRr-f3QgoSu4s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "391849080387-vh5flpd87a5muokhvigrindc0pkekul2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

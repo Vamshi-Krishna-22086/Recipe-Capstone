@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SearchIngredientActivity"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchIngredients"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:queryHint="search Ingredients"
+        android:queryBackground="@android:color/transparent"
+        android:iconifiedByDefault="false">
+        <requestFocus/>
+    </androidx.appcompat.widget.SearchView>
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_weight=".5"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/searchIngredients"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Added Ingredients"
+        android:layout_gravity="center_horizontal"/>
+
+    <ListView
+        android:id="@+id/selectedList"
+        android:layout_weight=".5"
+        android:layout_marginTop="10dp"
+        android:minHeight="200dp"
+        android:layout_below="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/done"
+        android:layout_gravity="center_horizontal"
+        android:text="Done"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>
