@@ -90,10 +90,10 @@ public class ClientAPI {
                     Log.d("Response",respObj.toString());  // to print the JSONObject 'respObj on the console
                     Bundle b =new Bundle();
                     b.putString("0",respObj.get("recipe_title").toString());  // retrieves the value associated with the corresponding key "recipe-title" from the respObj, converts it to string and stores in the Bundle b with the key "0". 
-                    b.putString("1",respObj.get("sub_region").toString());
+                    b.putString("4",respObj.get("sub_region").toString());
                     b.putString("2",respObj.get("total_time").toString());
                     b.putString("3",respObj.get("servings").toString());
-                    b.putString("4",respObj.get("calories").toString());
+                    b.putString("1",respObj.get("calories").toString());
                     b.putString("5",respObj.get("processes").toString());
                     b.putString("6",respObj.getString("utensils"));
                     b.putString("7",respObj.get("img_url").toString());
@@ -257,7 +257,7 @@ public class ClientAPI {
                     Log.d("Response1",response.toString()); // to print the response received on the console
                     //Toast.makeText(activity, response.toString(), Toast.LENGTH_SHORT).show();
                     Bundle b =new Bundle();
-                    b.putString("0", response.toString());  // retrieves the values from the response, converts it to string and stores in the Bundle b with the key "0". 
+                    b.putString("instructions", response.toString());  // retrieves the values from the response, converts it to string and stores in the Bundle b with the key "0".
                     updateCallback.onSuccess(b);
                 } catch (Exception e) {
                     e.printStackTrace();
