@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="200dp"
+    android:layout_height="250dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="5dp">
+    
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="200dp"
+        android:layout_height="250dp">
+        <LinearLayout
+            android:layout_weight="2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+
+            <ImageView
+                android:id="@+id/tile_recipe_image"
+                android:layout_width="match_parent"
+                android:src="@drawable/burger"
+                android:layout_height="match_parent"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="0dp">
+
+            <TextView
+                android:id="@+id/tile_recipe_name"
+                android:layout_width="match_parent"
+                android:layout_weight="2.5"
+                android:layout_height="0dp"
+                android:fontFamily="@font/roboto_condensed_bold"
+                android:text="Recipe Name"
+                android:paddingBottom="15dp"
+                android:paddingRight="10dp"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:paddingBottom="3dp"
+                android:layout_weight="1"
+                android:layout_height="0dp">
+
+                <ImageView
+                    android:src="@drawable/baseline_access_time_24"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:text="40 mins"
+                    android:fontFamily="@font/roboto_condensed_regular"
+                    android:textSize="14sp" />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+        
+    </LinearLayout>
+    
+
+</androidx.cardview.widget.CardView>

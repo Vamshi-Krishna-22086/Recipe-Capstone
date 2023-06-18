@@ -77,6 +77,7 @@ public class HomeFragment extends Fragment {
                     @Override
                     public void onClick(View v) {
                         Intent i= new Intent(getContext(),RecipeDetailActivity.class);
+                        //Intent i= new Intent(getContext(),RecipeLlistGridActivity.class);
                         i.putExtra("id",rel);
                         startActivity(i);
                     }

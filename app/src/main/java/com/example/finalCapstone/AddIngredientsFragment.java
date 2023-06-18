@@ -81,7 +81,8 @@ public class AddIngredientsFragment extends Fragment implements MostViewedListen
                 }
                 else {
                     //else we will go to a new activity which will show the recipes in the form list view
-                    Intent s = new Intent(getActivity(), RecipieListActivity.class);
+                    //Intent s = new Intent(getActivity(), RecipieListActivity.class);
+                    Intent s = new Intent(getActivity(), RecipeLlistGridActivity.class);
                     startActivity(s);
                 }
             }
