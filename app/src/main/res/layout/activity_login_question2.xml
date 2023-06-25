@@ -26,52 +26,150 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="24dp" />
 
-    <androidx.appcompat.widget.SearchView
-        android:id="@+id/searchAllergens"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:iconifiedByDefault="false"
-        android:queryBackground="@android:color/transparent"
-        android:queryHint="search Allergens"
-        app:layout_constraintTop_toBottomOf="@+id/text1"
-        tools:layout_editor_absoluteX="10dp">
-    </androidx.appcompat.widget.SearchView>
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
 
-    <ListView
-        android:id="@+id/allergensList"
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/asia_chip_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/allergen_milk"
+                android:text="Milk"
+                android:fontFamily="@font/roboto_condensed_regular"
+                android:textSize="18dp"
+                style="@style/CustomFilterChip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <com.google.android.material.chip.Chip
+                android:id="@+id/allergen_egg"
+                android:text="Egg"
+                android:fontFamily="@font/roboto_condensed_regular"
+                android:textSize="18dp"
+                style="@style/CustomFilterChip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <com.google.android.material.chip.Chip
+                android:id="@+id/allergen_treenut"
+                android:text="Tree nuts"
+                android:fontFamily="@font/roboto_condensed_regular"
+                android:textSize="18dp"
+                style="@style/CustomFilterChip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <com.google.android.material.chip.Chip
+                android:id="@+id/allergen_peanut"
+                android:text="Peanuts"
+                android:fontFamily="@font/roboto_condensed_regular"
+                android:textSize="18dp"
+                style="@style/CustomFilterChip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <com.google.android.material.chip.Chip
+                android:id="@+id/allergen_wheat"
+                android:text="Wheat"
+                android:fontFamily="@font/roboto_condensed_regular"
+                android:textSize="18dp"
+                style="@style/CustomFilterChip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <com.google.android.material.chip.Chip
+                android:id="@+id/allergen_soybean"
+                android:text="Soybeans"
+                android:fontFamily="@font/roboto_condensed_regular"
+                android:textSize="18dp"
+                style="@style/CustomFilterChip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <com.google.android.material.chip.Chip
+                android:id="@+id/allergen_sesame"
+                android:text="Sesame"
+                android:fontFamily="@font/roboto_condensed_regular"
+                android:textSize="18dp"
+                style="@style/CustomFilterChip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+
+        </com.google.android.material.chip.ChipGroup>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/searchAllergens"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:layout_weight=".5" />
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Added Ingredients"
-        android:fontFamily="@font/roboto_condensed_regular"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        android:layout_gravity="center_horizontal"/>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
 
-    <ListView
-        android:id="@+id/selectedAllergens"
-        android:layout_weight=".5"
-        android:layout_marginTop="10dp"
-        android:minHeight="200dp"
-        android:layout_below="@+id/allergensList"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/searchAllergens"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:iconifiedByDefault="false"
+                app:queryHint="Search more.."
+                android:queryBackground="@android:color/transparent"
+                android:queryHint="search Allergens"
+                app:layout_constraintTop_toBottomOf="@+id/text1"
+                tools:layout_editor_absoluteX="10dp">
+            </androidx.appcompat.widget.SearchView>
+
+            <ListView
+                android:id="@+id/allergensList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/searchAllergens"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight=".5" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Added Allergens"
+                android:fontFamily="@font/roboto_condensed_regular"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:layout_gravity="center_horizontal"/>
+
+            <ListView
+                android:id="@+id/selectedAllergens"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
 
     <RelativeLayout
-        android:layout_gravity="bottom"
         android:id="@+id/relativeLayout"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="-16dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
 <!--        <Button-->
 <!--            android:id="@+id/aprev"-->

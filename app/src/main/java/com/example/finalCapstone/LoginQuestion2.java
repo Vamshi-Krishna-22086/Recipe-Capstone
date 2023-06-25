@@ -44,21 +44,20 @@ public class LoginQuestion2 extends AppCompatActivity implements AdapterView.OnI
         userAllergenList = new ArrayList<String>();
 
         allergensList = new ArrayList<String>();
-        allergensList.add("Milk");
-        allergensList.add("Eggs");
-        allergensList.add("Peanuts");
-        allergensList.add("Wheat");
-        allergensList.add("Soybeans");
-        allergensList.add("Sesame");
+//        allergensList.add("Milk");
+//        allergensList.add("Eggs");
+//        allergensList.add("Peanuts");
+//        allergensList.add("Wheat");
+//        allergensList.add("Soybeans");
+//        allergensList.add("Sesame");
         allergensList.add("Shrimp");
-        allergensList.add("Wheat");
         allergensList.add("Almonds");
         allergensList.add("Celery");
         allergensList.add("Mustard");
         allergensList.add("Apricot");
         allergensList.add("Fish");
         allergensList.add("Crustacean Shellfish");
-        allergensList.add("Tree nuts");
+        //allergensList.add("Tree nuts");
         allergensList.add("Cereals containing gultens");
         allergensList.add("Cabbage");
         allergensList.add("Zucchini");

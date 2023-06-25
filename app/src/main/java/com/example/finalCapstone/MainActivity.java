@@ -17,6 +17,7 @@ import android.os.Bundle;
 //}
 
 
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -34,6 +35,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.SignInMethodQueryResult;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -47,6 +49,8 @@ public class MainActivity extends AppCompatActivity {
 
     FirebaseAuth mAuth;
     FirebaseUser mUser;
+    GoogleSignInAccount account;
+    String TAG = "MainActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +68,17 @@ public class MainActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
+
+        // checking if a user is already logged In, then taking him to the home fragment
+//        if(mUser != null)
+//        {
+//            navigatToHome();
+//        }
+//        else
+//        {
+//            Toast.makeText(this, "hello", Toast.LENGTH_SHORT).show();
+//        }
+        // checking ends
 
         register.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -111,7 +126,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // checking if the user is already signed in
-        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
+        account = GoogleSignIn.getLastSignedInAccount(this);
         if(account != null)
         {
             navigatToHome();
@@ -129,21 +144,39 @@ public class MainActivity extends AppCompatActivity {
     void googleSignIn()
     {
         Intent googleIntent = googleSignInClient.getSignInIntent();
-        startActivityForResult(googleIntent,200);
+        startActivityForResult(googleIntent,1000);
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode == 200)
+        if(requestCode == 1000)
         {
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
             try {
                 task.getResult(ApiException.class);
                 // if the user is new then call navigateToQuestions method
                 // if the user is existing user then call navigateToHome method
+//                String email = account.getEmail();
+//                mAuth.fetchSignInMethodsForEmail(email)
+//                                .addOnCompleteListener(new OnCompleteListener<SignInMethodQueryResult>() {
+//                                    @Override
+//                                    public void onComplete(@NonNull Task<SignInMethodQueryResult> task) {
+//                                        boolean check = !task.getResult().getSignInMethods().isEmpty();
+//                                        if(!check)
+//                                        {
+//                                            // email not found so new user
+//                                            navigateToQuestions();
+//                                        }
+//                                        else {
+//                                            navigatToHome();
+//                                        }
+//                                    }
+//                                });
                 navigateToQuestions();
             } catch (ApiException e) {
+                Toast.makeText(this, "An ERROR Encountered", Toast.LENGTH_SHORT).show();
+                //Log.i(TAG, e.printStackTrace());
                 e.printStackTrace();
             }
         }

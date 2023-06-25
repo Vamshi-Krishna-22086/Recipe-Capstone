@@ -74,6 +74,7 @@
                 android:layout_height="60dp"
                 android:id="@+id/loginButton"
                 android:text="Login"
+                android:fontFamily="sans-serif-medium"
                 android:textSize="18sp"
                 android:layout_marginTop="30dp"
                 android:backgroundTint="@color/purple"
@@ -105,9 +106,9 @@
     <TextView
         android:textAlignment="center"
         android:id="@+id/registerText"
-        android:text="Register"
+        android:text="New user? Register here"
+        android:fontFamily="sans-serif-medium"
         android:textSize="20sp"
-        android:textColor="@color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
