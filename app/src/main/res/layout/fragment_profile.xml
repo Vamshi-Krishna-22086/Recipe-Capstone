@@ -17,6 +17,8 @@
     <Button
         android:id="@+id/UserSignOut"
         android:text="Sign Out"
+        android:backgroundTint="@color/pink"
+        android:fontFamily="sans-serif-medium"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:layout_width="wrap_content"

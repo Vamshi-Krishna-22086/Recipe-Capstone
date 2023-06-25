@@ -17,6 +17,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class Dashboard extends AppCompatActivity {
 
     BottomNavigationView bnview;
+    String ROOT_FRAGMENT_TAG = "home_fragment";
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -33,7 +34,7 @@ public class Dashboard extends AppCompatActivity {
                 switch (item.getItemId())
                 {
                     case R.id.nav_home:
-                            onLoad(new HomeFragment(),1);
+                            onLoad(new HomeFragment(),0);
                             break;
                     case R.id.nav_fav:
                         onLoad(new FavFragment(),1);
@@ -58,12 +59,25 @@ public class Dashboard extends AppCompatActivity {
     {
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction ft=fm.beginTransaction();
-        if(flag==1)
-            ft.replace(R.id.container,fragment);
-        else
-            ft.replace(R.id.container,fragment);
+        if(flag==0) {
+            ft.replace(R.id.container, fragment);
+            fm.popBackStack(ROOT_FRAGMENT_TAG, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+            ft.addToBackStack(ROOT_FRAGMENT_TAG);
+        }
+        else {
+            ft.replace(R.id.container, fragment);
+            ft.addToBackStack(null);
+        }
         ft.commit();
-
-
     }
+//    @Override
+//    public void onBackPressed() {
+//        FragmentManager fragmentManager = getSupportFragmentManager();
+//        int backStackEntryCount = fragmentManager.getBackStackEntryCount();
+//        if (backStackEntryCount > 1) {
+//            fragmentManager.popBackStack();
+//        } else {
+//            super.onBackPressed();
+//        }
+//    }
 }

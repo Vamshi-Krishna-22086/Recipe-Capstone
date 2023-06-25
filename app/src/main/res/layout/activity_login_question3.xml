@@ -5,17 +5,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="10dp"
     tools:context=".LoginQuestion3">
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/question_3_Progress"
+        android:layout_width="match_parent"
+        app:indicatorColor="@color/pink"
+        android:layout_height="3dp"
+        android:layout_marginBottom="15dp"/>
 
     <LinearLayout
         android:orientation="horizontal"
-        android:paddingStart="5dp"
+        android:paddingStart="10dp"
         android:paddingEnd="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
             android:text="@string/preferred_cuisine"
-            android:textSize="24sp"
+            android:fontFamily="@font/roboto_condensed_bold"
+            android:textSize="25sp"
             android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
@@ -43,6 +52,7 @@
                     android:paddingStart="10dp"
                     android:paddingEnd="0dp"
                     android:text="Asia"
+                    android:fontFamily="@font/roboto_condensed_bold"
                     android:textSize="22sp"
                     android:textStyle="bold"
                     android:layout_width="match_parent"
@@ -56,6 +66,7 @@
                     <com.google.android.material.chip.Chip
                         android:id="@+id/chip_chinese"
                         android:text="Chinese and Mongolian"
+                        android:fontFamily="@font/roboto_condensed_regular"
                         android:textSize="18dp"
                         style="@style/CustomFilterChip"
                         android:layout_width="wrap_content"
@@ -63,6 +74,7 @@
                     <com.google.android.material.chip.Chip
                         android:id="@+id/chip_india"
                         android:text="Indian subcontinent"
+                        android:fontFamily="@font/roboto_condensed_regular"
                         android:textSize="18dp"
                         style="@style/CustomFilterChip"
                         android:layout_width="wrap_content"
@@ -70,6 +82,7 @@
                     <com.google.android.material.chip.Chip
                         android:id="@+id/chip_japan"
                         android:text="Japanese"
+                        android:fontFamily="@font/roboto_condensed_regular"
                         android:textSize="18dp"
                         style="@style/CustomFilterChip"
                         android:layout_width="wrap_content"
@@ -77,6 +90,7 @@
                     <com.google.android.material.chip.Chip
                         android:id="@+id/chip_korea"
                         android:text="Korean"
+                        android:fontFamily="@font/roboto_condensed_regular"
                         android:textSize="18dp"
                         style="@style/CustomFilterChip"
                         android:layout_width="wrap_content"
@@ -84,6 +98,7 @@
                     <com.google.android.material.chip.Chip
                         android:id="@+id/chip_middle_east"
                         android:text="Middle Eastern"
+                        android:fontFamily="@font/roboto_condensed_regular"
                         android:textSize="18dp"
                         style="@style/CustomFilterChip"
                         android:layout_width="wrap_content"
@@ -91,6 +106,7 @@
                     <com.google.android.material.chip.Chip
                         android:id="@+id/chip_south_east_asia"
                         android:text="Southeast Asian"
+                        android:fontFamily="@font/roboto_condensed_regular"
                         android:textSize="18dp"
                         style="@style/CustomFilterChip"
                         android:layout_width="wrap_content"
@@ -98,6 +114,7 @@
                     <com.google.android.material.chip.Chip
                         android:id="@+id/chip_thai"
                         android:text="Thai"
+                        android:fontFamily="@font/roboto_condensed_regular"
                         android:textSize="18dp"
                         style="@style/CustomFilterChip"
                         android:layout_width="wrap_content"
@@ -122,6 +139,7 @@
                 <TextView
                     android:paddingLeft="10dp"
                     android:text="Europe"
+                    android:fontFamily="@font/roboto_condensed_bold"
                     android:textSize="22sp"
                     android:textStyle="bold"
                     android:layout_width="match_parent"
@@ -134,74 +152,93 @@
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/chip_belgian"
-                        android:text="Belgian"
-                        android:textSize="18dp"
                         style="@style/CustomFilterChip"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_condensed_regular"
+                        android:text="Belgian"
+                        android:textSize="18dp" />
+
                     <com.google.android.material.chip.Chip
                         android:id="@+id/chip_deutschland"
-                        android:text="Deutschland"
-                        android:textSize="18dp"
                         style="@style/CustomFilterChip"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_condensed_regular"
+                        android:text="Deutschland"
+                        android:textSize="18dp" />
+
                     <com.google.android.material.chip.Chip
                         android:id="@+id/chip_east_europe"
-                        android:text="Eastern Europe"
-                        android:textSize="18dp"
                         style="@style/CustomFilterChip"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_condensed_regular"
+                        android:text="Eastern Europe"
+                        android:textSize="18dp" />
+
                     <com.google.android.material.chip.Chip
                         android:id="@+id/chip_french"
-                        android:text="French"
-                        android:textSize="18dp"
                         style="@style/CustomFilterChip"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_condensed_regular"
+                        android:text="French"
+                        android:textSize="18dp" />
+
                     <com.google.android.material.chip.Chip
                         android:id="@+id/chip_greek"
-                        android:text="Greek"
-                        android:textSize="18dp"
                         style="@style/CustomFilterChip"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_condensed_regular"
+                        android:text="Greek"
+                        android:textSize="18dp" />
+
                     <com.google.android.material.chip.Chip
                         android:id="@+id/chip_irish"
-                        android:text="Irish"
-                        android:textSize="18dp"
                         style="@style/CustomFilterChip"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_condensed_regular"
+                        android:text="Irish"
+                        android:textSize="18dp" />
+
                     <com.google.android.material.chip.Chip
                         android:id="@+id/chip_italy"
-                        android:text="Italian"
-                        android:textSize="18dp"
                         style="@style/CustomFilterChip"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_condensed_regular"
+                        android:text="Italian"
+                        android:textSize="18dp" />
+
                     <com.google.android.material.chip.Chip
                         android:id="@+id/chip_scandinavia"
-                        android:text="Scandinavian"
-                        android:textSize="18dp"
                         style="@style/CustomFilterChip"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_condensed_regular"
+                        android:text="Scandinavian"
+                        android:textSize="18dp" />
+
                     <com.google.android.material.chip.Chip
                         android:id="@+id/chip_span_portugal"
-                        android:text="Spanish and Portuguese"
-                        android:textSize="18dp"
                         style="@style/CustomFilterChip"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_condensed_regular"
+                        android:text="Spanish and Portuguese"
+                        android:textSize="18dp" />
+
                     <com.google.android.material.chip.Chip
                         android:id="@+id/chip_uk"
-                        android:text="UK"
-                        android:textSize="18dp"
                         style="@style/CustomFilterChip"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_condensed_regular"
+                        android:text="UK"
+                        android:textSize="18dp" />
 
                 </com.google.android.material.chip.ChipGroup>
 
@@ -222,6 +259,7 @@
                 <TextView
                     android:paddingLeft="10dp"
                     android:text="North America"
+                    android:fontFamily="@font/roboto_condensed_bold"
                     android:textSize="22sp"
                     android:textStyle="bold"
                     android:layout_width="match_parent"
@@ -235,6 +273,7 @@
                     <com.google.android.material.chip.Chip
                         android:id="@+id/chip_canada"
                         android:text="Canadian"
+                        android:fontFamily="@font/roboto_condensed_regular"
                         android:textSize="18dp"
                         style="@style/CustomFilterChip"
                         android:layout_width="wrap_content"
@@ -242,6 +281,7 @@
                     <com.google.android.material.chip.Chip
                         android:id="@+id/chip_caribbean"
                         android:text="Caribbean"
+                        android:fontFamily="@font/roboto_condensed_regular"
                         android:textSize="18dp"
                         style="@style/CustomFilterChip"
                         android:layout_width="wrap_content"
@@ -249,6 +289,7 @@
                     <com.google.android.material.chip.Chip
                         android:id="@+id/chip_central_america"
                         android:text="Central American"
+                        android:fontFamily="@font/roboto_condensed_regular"
                         android:textSize="18dp"
                         style="@style/CustomFilterChip"
                         android:layout_width="wrap_content"
@@ -256,6 +297,7 @@
                     <com.google.android.material.chip.Chip
                         android:id="@+id/chip_mexico"
                         android:text="Mexican"
+                        android:fontFamily="@font/roboto_condensed_regular"
                         android:textSize="18dp"
                         style="@style/CustomFilterChip"
                         android:layout_width="wrap_content"
@@ -263,6 +305,7 @@
                     <com.google.android.material.chip.Chip
                         android:id="@+id/chip_us"
                         android:text="US"
+                        android:fontFamily="@font/roboto_condensed_regular"
                         android:textSize="18dp"
                         style="@style/CustomFilterChip"
                         android:layout_width="wrap_content"
@@ -286,6 +329,7 @@
                 <TextView
                     android:paddingLeft="10dp"
                     android:text="Africa"
+                    android:fontFamily="@font/roboto_condensed_bold"
                     android:textSize="22sp"
                     android:textStyle="bold"
                     android:layout_width="match_parent"
@@ -299,6 +343,7 @@
                     <com.google.android.material.chip.Chip
                         android:id="@+id/chip_north_africa"
                         android:text="Northern Africa"
+                        android:fontFamily="@font/roboto_condensed_regular"
                         android:textSize="18dp"
                         style="@style/CustomFilterChip"
                         android:layout_width="wrap_content"
@@ -306,6 +351,7 @@
                     <com.google.android.material.chip.Chip
                         android:id="@+id/chip_rest_africa"
                         android:text="Rest Africa"
+                        android:fontFamily="@font/roboto_condensed_regular"
                         android:textSize="18dp"
                         style="@style/CustomFilterChip"
                         android:layout_width="wrap_content"
@@ -330,6 +376,7 @@
                 <TextView
                     android:paddingLeft="10dp"
                     android:text="Australia"
+                    android:fontFamily="@font/roboto_condensed_bold"
                     android:textSize="22sp"
                     android:textStyle="bold"
                     android:layout_width="match_parent"
@@ -343,6 +390,7 @@
                     <com.google.android.material.chip.Chip
                         android:id="@+id/chip_australia"
                         android:text="Australian"
+                        android:fontFamily="@font/roboto_condensed_regular"
                         android:textSize="18dp"
                         style="@style/CustomFilterChip"
                         android:layout_width="wrap_content"
@@ -367,6 +415,7 @@
                 <TextView
                     android:paddingLeft="10dp"
                     android:text="South America"
+                    android:fontFamily="@font/roboto_condensed_bold"
                     android:textSize="22sp"
                     android:textStyle="bold"
                     android:layout_width="match_parent"
@@ -380,6 +429,7 @@
                     <com.google.android.material.chip.Chip
                         android:id="@+id/chip_south_america"
                         android:text="South American"
+                        android:fontFamily="@font/roboto_condensed_regular"
                         android:textSize="18dp"
                         style="@style/CustomFilterChip"
                         android:layout_width="wrap_content"
@@ -402,22 +452,23 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <Button
-            android:id="@+id/cprev"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:backgroundTint="@color/pink"
-            android:text="Back"
-            android:textColor="@color/white" />
+<!--        <Button-->
+<!--            android:id="@+id/cprev"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_alignParentLeft="true"-->
+<!--            android:backgroundTint="@color/pink"-->
+<!--            android:fontFamily="sans-serif-medium"-->
+<!--            android:text="Back"-->
+<!--            android:textColor="@color/white" />-->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="2/3"
-            android:textSize="15sp"
-            android:textStyle="italic" />
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_centerInParent="true"-->
+<!--            android:text="2/3"-->
+<!--            android:textSize="15sp"-->
+<!--            android:textStyle="italic" />-->
 
         <Button
             android:id="@+id/cnext"
@@ -426,6 +477,7 @@
             android:layout_alignParentRight="true"
             android:backgroundTint="@color/pink"
             android:text="next"
+            android:fontFamily="sans-serif-medium"
             android:textColor="@color/white" />
 
     </RelativeLayout>

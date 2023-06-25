@@ -47,7 +47,7 @@ public class AddIngredientsFragment extends Fragment implements MostViewedListen
         //rv1 is the first recycler view which deals with the most popular ingredients
         //rv2 is the second recycler view which deals with  added ingredients ,which are viewing as a grid layout
         rv1=view.findViewById(R.id.mostViewRecycle);
-        rv1.setLayoutManager(new LinearLayoutManager(view.getContext(),LinearLayoutManager.HORIZONTAL,true));
+        rv1.setLayoutManager(new LinearLayoutManager(view.getContext(),LinearLayoutManager.HORIZONTAL,false));
         rv2=view.findViewById(R.id.addedRecycle);
         rv2.setLayoutManager(new GridLayoutManager(view.getContext(),3));
         GlobalTopIngredients.set_items();
@@ -94,13 +94,13 @@ public class AddIngredientsFragment extends Fragment implements MostViewedListen
     public void onStart()
     {
         super.onStart();
-        Toast.makeText(getContext(), "onStart", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getContext(), "onStart", Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        Toast.makeText(getContext(), "OnResume", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getContext(), "OnResume", Toast.LENGTH_SHORT).show();
     }
 
     @Override

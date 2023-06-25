@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import com.google.android.material.progressindicator.LinearProgressIndicator;
+
 public class LoginQuestion extends AppCompatActivity {
 
     private Button next;
@@ -17,6 +19,7 @@ public class LoginQuestion extends AppCompatActivity {
     RadioButton veg,vegan,ovoVeg,nonVeg,eatall;
     String diet;
     UserData data = new UserData();
+    LinearProgressIndicator progressIndicator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +34,10 @@ public class LoginQuestion extends AppCompatActivity {
         ovoVeg = (RadioButton) findViewById(R.id.radioOvoVegetarian);
         nonVeg = (RadioButton) findViewById(R.id.radioNonVegetarian);
         eatall = (RadioButton) findViewById(R.id.radioEverything);
+        progressIndicator = findViewById(R.id.question_1_Progress);
+        int max = progressIndicator.getMax();
+        int fill = max/3;
+        progressIndicator.setProgressCompat(fill,true);
 
         next.setOnClickListener(new View.OnClickListener() {
             @Override

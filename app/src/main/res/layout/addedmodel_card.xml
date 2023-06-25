@@ -12,33 +12,44 @@
         app:cardElevation="5dp"
         app:cardCornerRadius="5dp"
         >
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
             <ImageView
+                android:layout_gravity="center"
                 android:id="@+id/AddedImageView"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_marginLeft="14dp"
-                android:layout_marginBottom="5dp" />
+                android:layout_width="112dp"
+                android:layout_height="112dp" />
+            <ImageButton
+                android:id="@+id/AddedDeleteButton"
+                android:src="@drawable/baseline_close_24"
+                android:layout_alignTop="@id/AddedImageView"
+                android:background="#00FFFFFF"
+                android:layout_alignEnd="@id/AddedImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
 
             <TextView
+                android:layout_below="@id/AddedImageView"
                 android:id="@+id/AddedTextView"
-                android:layout_width="70dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="17dp"
-                />
-             <Button
-                 android:id="@+id/AddedDeleteButton"
-                 android:layout_width="wrap_content"
-                 android:layout_height="wrap_content"
-                 android:text="Delete"
-                 android:layout_marginLeft="10dp"
-                 />
+                android:textSize="18sp"
+                android:fontFamily="@font/roboto_condensed_regular"
+                android:gravity="center"/>
+<!--             <Button-->
+<!--                 android:id="@+id/AddedDeleteButton"-->
+<!--                 android:layout_below="@id/AddedTextView"-->
+<!--                 android:layout_width="match_parent"-->
+<!--                 android:layout_height="wrap_content"-->
+<!--                 android:text="Delete"-->
+<!--                 android:backgroundTint="@color/pink"-->
+<!--                 android:fontFamily="sans-serif-medium"-->
+<!--                 />-->
 
-        </LinearLayout>
+        </RelativeLayout>
 
 
 

@@ -1,20 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".LoginQuestion"
+    android:orientation="vertical"
     android:padding="10dp">
 
-
-    <ScrollView
-        android:id="@+id/dietScrollView"
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/question_1_Progress"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="30dp">
+        app:indicatorColor="@color/pink"
+        android:layout_height="3dp"
+        android:layout_marginBottom="15dp"/>
+
+
+<!--    <ScrollView-->
+<!--        android:id="@+id/dietScrollView"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_marginBottom="30dp">-->
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -25,6 +33,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Hi, Please tell us about your diet"
+                android:fontFamily="@font/roboto_condensed_bold"
                 android:textStyle="bold"
                 android:layout_marginTop="5dp"
                 android:textSize="25sp"
@@ -47,6 +56,7 @@
                     android:checked="false"
                     android:padding="5dp"
                     android:text="Vegan"
+                    android:fontFamily="@font/roboto_condensed_regular"
                     android:textSize="20sp" />
 
                 <RadioButton
@@ -56,6 +66,7 @@
                     android:checked="false"
                     android:padding="5dp"
                     android:text="Vegetarian"
+                    android:fontFamily="@font/roboto_condensed_regular"
                     android:textSize="20sp" />
 
                 <RadioButton
@@ -65,6 +76,7 @@
                     android:checked="false"
                     android:padding="5dp"
                     android:text="Ovo-vegetarian (Egg)"
+                    android:fontFamily="@font/roboto_condensed_regular"
                     android:textSize="20sp" />
 
                 <RadioButton
@@ -74,6 +86,7 @@
                     android:checked="false"
                     android:padding="5dp"
                     android:text="Non-vegetarian"
+                    android:fontFamily="@font/roboto_condensed_regular"
                     android:textSize="20sp" />
 
                 <RadioButton
@@ -83,6 +96,7 @@
                     android:checked="true"
                     android:padding="5dp"
                     android:text="I eat everything"
+                    android:fontFamily="@font/roboto_condensed_regular"
                     android:textSize="20sp" />
 
             </RadioGroup>
@@ -98,56 +112,22 @@
 
             </RelativeLayout>
 
+            <Button
+                android:id="@+id/dietNextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:backgroundTint="@color/pink"
+                android:fontFamily="sans-serif-medium"
+                android:text="next"
+                android:textColor="@color/white" />
+
         </RelativeLayout>
 
-    </ScrollView>
-
-    <RelativeLayout
-        android:layout_gravity="bottom"
-        android:id="@+id/relativeLayout"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_alignParentBottom="true"
-        tools:layout_editor_absoluteX="-16dp">
-
-        <TextView
-            android:id="@+id/dietProgress"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:gravity="center"
-            android:text="1/3"
-            android:textSize="15sp" />
-
-        <Button
-            android:id="@+id/dietNextButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:text="next"
-            android:textColor="@color/white" />
-
-    </RelativeLayout>
-
-<!--    <Button-->
-<!--        android:id="@+id/dietNextButton"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_alignParentRight="true"-->
-<!--        android:layout_marginRight="30dp"-->
-<!--        android:layout_above="@+id/dietProgress"-->
-<!--        android:text="Next" />-->
-
-<!--    <TextView-->
-<!--        android:id="@+id/dietProgress"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="20dp"-->
-<!--        android:layout_alignParentEnd="true"-->
-<!--        android:layout_alignParentBottom="true"-->
-<!--        android:gravity="center"-->
-<!--        android:text="1/3"-->
-<!--        android:textSize="15sp" />-->
+<!--    </ScrollView>-->
 
 
-</RelativeLayout>
+
+
+</LinearLayout>

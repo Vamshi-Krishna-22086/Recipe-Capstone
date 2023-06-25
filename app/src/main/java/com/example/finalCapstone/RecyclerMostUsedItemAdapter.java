@@ -12,11 +12,15 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
+
 //this is the adapter for the recycler view which consist of the most frequent ingredient items
 public class RecyclerMostUsedItemAdapter extends RecyclerView.Adapter<RecyclerMostUsedItemAdapter.ViewHolder>
 {
     Context context;
     MostViewedListener listener;
+    int[] IngredientImages = {R.drawable.salt,R.drawable.onion,R.drawable.butter,R.drawable.garlic,R.drawable.oliveoil,R.drawable.sugar,R.drawable.tomato,R.drawable.blackpepper,
+            R.drawable.flour,R.drawable.parsley,R.drawable.carrot,R.drawable.cumin,R.drawable.potato,R.drawable.lemon,R.drawable.soysauce};
 
     RecyclerMostUsedItemAdapter(Context context,MostViewedListener listener)
     {   //setting the context and listener interface in this adapter
@@ -36,7 +40,8 @@ public class RecyclerMostUsedItemAdapter extends RecyclerView.Adapter<RecyclerMo
     public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position)
     {
         //we are connecting the view holder with the correct position element from arraylist
-        holder.iv1.setImageResource(GlobalTopIngredients.arr.get(position).url);
+//        holder.iv1.setImageResource(GlobalTopIngredients.arr.get(position).url);
+        holder.iv1.setImageResource(IngredientImages[position]);
         holder.tv1.setText(GlobalTopIngredients.arr.get(position).name);
         holder.cv1.setOnClickListener(new View.OnClickListener() {
             @Override

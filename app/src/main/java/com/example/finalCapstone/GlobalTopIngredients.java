@@ -10,18 +10,21 @@ public class GlobalTopIngredients
         //here we are adding the common ingredients so that the user need not explicitly mention the ingredient
         //we are creating each element as a object of model class and storing in 'arr' ,which is static
         //we can directly access the arraylist since it is static
-        arr.add(new Model(R.drawable.burger,"potato"));
-        arr.add(new Model(R.drawable.burger,"onion"));
-        arr.add(new Model(R.drawable.burger,"tomato"));
-        arr.add(new Model(R.drawable.burger,"carrot"));
-        arr.add(new Model(R.drawable.burger,"capsicum"));
-        arr.add(new Model(R.drawable.burger,"salt"));
-        arr.add(new Model(R.drawable.burger,"sugar"));
-        arr.add(new Model(R.drawable.burger,"milk"));
-        arr.add(new Model(R.drawable.burger,"cumin"));
-        arr.add(new Model(R.drawable.burger,"honey"));
-        arr.add(new Model(R.drawable.burger,"oil"));
-        arr.add(new Model(R.drawable.burger,"orange"));
+        arr.add(new Model(R.drawable.burger,"Salt"));
+        arr.add(new Model(R.drawable.burger,"Onion"));
+        arr.add(new Model(R.drawable.burger,"Butter"));
+        arr.add(new Model(R.drawable.burger,"Garlic"));
+        arr.add(new Model(R.drawable.burger,"Olive oil"));
+        arr.add(new Model(R.drawable.burger,"Sugar"));
+        arr.add(new Model(R.drawable.burger,"Tomato"));
+        arr.add(new Model(R.drawable.burger,"Black Pepper"));
+        arr.add(new Model(R.drawable.burger,"Flour"));
+        arr.add(new Model(R.drawable.burger,"Parsley"));
+        arr.add(new Model(R.drawable.burger,"Carrot"));
+        arr.add(new Model(R.drawable.burger,"Cumin"));
+        arr.add(new Model(R.drawable.burger,"Potato"));
+        arr.add(new Model(R.drawable.burger,"Lemon"));
+        arr.add(new Model(R.drawable.burger,"Soy Sauce"));
 
     }
 }

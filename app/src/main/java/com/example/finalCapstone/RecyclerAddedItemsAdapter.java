@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -56,7 +57,7 @@ public class RecyclerAddedItemsAdapter extends RecyclerView.Adapter<RecyclerAdde
     {
         TextView tv1;
         ImageView iv1;
-        Button del;
+        ImageButton del;
         //added by VK
         private RecyclerAddedItemsAdapter adapter;
 

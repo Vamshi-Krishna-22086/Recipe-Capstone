@@ -11,6 +11,7 @@ import android.widget.CheckBox;
 import android.widget.Toast;
 
 import com.google.android.material.chip.Chip;
+import com.google.android.material.progressindicator.LinearProgressIndicator;
 
 import java.util.ArrayList;
 
@@ -21,13 +22,17 @@ public class LoginQuestion3 extends AppCompatActivity {
             restAfrica,northernAfrica,middleEastern,korean,japanese,irish,indianSubcontinent,greek,french,easternEuropean,
             deutschland,chineseAndMongolian,centralAmerican,caribbean,belgian,australian,canadian;
     Button cnext, cprev;
+    LinearProgressIndicator progressIndicator;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_question3);
         // Buttons
-        cprev = findViewById(R.id.cprev);
+        //cprev = findViewById(R.id.cprev);
         cnext = findViewById(R.id.cnext);
+        progressIndicator = findViewById(R.id.question_3_Progress);
+        int max = progressIndicator.getMax();
+        progressIndicator.setProgressCompat(max,true);
         // Asia chip group
         chineseAndMongolian = findViewById(R.id.chip_chinese);
         indianSubcontinent = findViewById(R.id.chip_india);
@@ -430,57 +435,18 @@ public class LoginQuestion3 extends AppCompatActivity {
             }
         });
 
-
         // on clicking the next button
-
         cnext.setOnClickListener(new View.OnClickListener() {
-
             @Override
-
             public void onClick(View view) {
-
                 Log.i("Cuisines list", "onClick: " + userPreferredCuisineList);
-
                 Intent n = new Intent(getApplicationContext(), Dashboard.class);
-
-                data.setCuisines(userPreferredCuisineList);
-
+                n.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                //data.setCuisines(userPreferredCuisineList);
                 startActivity(n);
-
             }
-
-        });
-
-
-        // on clicking the prev button
-
-        cprev.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-
-            public void onClick(View view) {
-
-                Intent p = new Intent(getApplicationContext(), LoginQuestion2.class);
-
-                startActivity(p);
-
-            }
-
         });
 
     }
-//    public void onChecked(View view)
-//    {
-//        Toast.makeText(this, "Item Selected", Toast.LENGTH_SHORT).show();
-//        Button b=findViewById(R.id.cnext);
-//        b.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent i = new Intent(getApplicationContext(),Dashboard.class);
-//                startActivity(i);
-//
-//            }
-//        });
-//    }
-//}
+
 }
