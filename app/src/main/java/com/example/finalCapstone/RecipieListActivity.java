@@ -90,7 +90,16 @@ public class RecipieListActivity extends AppCompatActivity {
 
                 //Log.i("tarun", String.valueOf(s2_id.size()));
                   Intent suggestion = new Intent(getApplicationContext(),RecipeSuggestionActivity.class);
-                  suggestion.putStringArrayListExtra("recipe_ids",s2_id);
+                ArrayList<String> s2_id_short;
+                  if(s2_id.size() > 20)
+                  {
+                      s2_id_short = new ArrayList<>(s2_id.subList(0, 19));
+                  }
+                  else
+                  {
+                      s2_id_short = new ArrayList<>(s2_id.subList(0, s2_id.size() - 1));
+                  }
+                  suggestion.putStringArrayListExtra("recipe_ids",s2_id_short);
                   startActivity(suggestion);
 
 //                for(int i=0;i<arr.length;i++)

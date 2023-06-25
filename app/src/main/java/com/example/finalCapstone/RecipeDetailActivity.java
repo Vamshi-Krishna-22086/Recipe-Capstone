@@ -43,7 +43,7 @@ import java.util.List;
 import retrofit2.http.Url;
 
 public class RecipeDetailActivity extends Activity {
-    public List<String> tileNames = new ArrayList<String>(Arrays.asList("Protein : ","Calories : ","Total-Time : ", "Servings : ","Cuisine : "));
+    public List<String> tileNames = new ArrayList<String>(Arrays.asList("Protein : ","Calories : ","Total-Time (mins): ", "Servings : ","Cuisine : "));
     //public List<String> tileNames = new ArrayList<String>(Arrays.asList("Total-Time : ", "Servings : ","Cuisine : "));
     String[] ingdreintList;
     public List<Integer> iconList = new ArrayList<Integer>(Arrays.asList(R.drawable.protien,R.drawable.calories,R.drawable.cooktime,R.drawable.servings,R.drawable.cuisine));

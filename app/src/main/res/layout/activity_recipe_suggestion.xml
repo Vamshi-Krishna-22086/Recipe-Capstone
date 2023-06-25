@@ -7,15 +7,13 @@
     android:orientation="vertical"
     android:background="@color/mediumGrey"
     android:padding="3dp"
+    android:gravity="center"
     tools:context=".RecipeSuggestionActivity">
 
-    <GridView
-        android:layout_marginTop="10dp"
-        android:id="@+id/grid_recipe_list"
-        android:numColumns="2"
-        android:horizontalSpacing="10dp"
-        android:verticalSpacing="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+    <TextView
+        android:text="Loading...."
+        android:textSize="22sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>

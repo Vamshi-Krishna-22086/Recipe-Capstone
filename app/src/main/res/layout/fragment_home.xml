@@ -1,50 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
+    android:orientation="vertical"
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@id/text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:gravity="center_horizontal"
-        android:text="Recipe Of The Day"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageRecipeOfDay"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text"
-        app:layout_constraintVertical_bias="0.3" />
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_weight="2">
 
-    <TextView
-        android:id="@+id/Recipe_Day"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:gravity="center"
-        app:layout_constraintBottom_toTopOf="@+id/imageRecipeOfDay"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text"
-        app:layout_constraintVertical_bias="0.7"
-        tools:ignore="MissingConstraints" />
+        <ImageView
+            android:id="@+id/imageRecipeOfDay"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:src="@color/pink"
+            android:scaleType="fitXY"/>
+
+        <TextView
+            android:id="@id/text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-85dp"
+            android:fontFamily="@font/roboto_condensed_bold"
+            android:gravity="center_horizontal"
+            android:text="Recipe Of The Day"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/Recipe_Day"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/roboto_condensed_regular"
+            android:textStyle="bold"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+<!--        <ImageView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:src="@color/teal_200"/>-->
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+    </LinearLayout>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

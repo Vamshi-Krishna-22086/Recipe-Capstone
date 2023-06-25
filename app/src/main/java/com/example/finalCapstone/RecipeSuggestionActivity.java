@@ -25,13 +25,11 @@ public class RecipeSuggestionActivity extends AppCompatActivity {
     ArrayList<String> ids = new ArrayList<>();
     ArrayList<String> cookTimes = new ArrayList<>();
     ArrayList<String> imageURLs = new ArrayList<>();
-    GridView gridView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe_suggestion);
 
-        gridView = findViewById(R.id.grid_recipe_list);
         Intent i = getIntent();
         recipe_ids = i.getStringArrayListExtra("recipe_ids");
         if(recipe_ids.size() == 0)
@@ -48,9 +46,6 @@ public class RecipeSuggestionActivity extends AppCompatActivity {
                 makeAPICall(recipe_ids.get(counter),counter,counter == recipe_ids.size()-1);
             }
         }
-        // call the recipe suggestion adapter
-//        RecipeSuggestionAdapter rsAdapter = new RecipeSuggestionAdapter(this,recipes);
-//        gridView.setAdapter(rsAdapter);
 
     }
     void makeAPICall(String id, int count, boolean last)
@@ -79,14 +74,13 @@ public class RecipeSuggestionActivity extends AppCompatActivity {
                 if(last)
                 {
                    Log.i(TAG, "called Adapter");
-//                    RecipeSuggestionAdapter rsAdapter = new RecipeSuggestionAdapter(getApplicationContext(),R.layout.card_llist_recipe);
-//                    gridView.setAdapter(rsAdapter);
-                    Intent i = new Intent(RecipeSuggestionActivity.this, dummyActivity.class);
+                    Intent i = new Intent(RecipeSuggestionActivity.this, RecipeLlistGridActivity.class);
                     i.putStringArrayListExtra("names",names);
                     i.putStringArrayListExtra("ids", ids);
                     i.putStringArrayListExtra("imageURLs", imageURLs);
                     i.putStringArrayListExtra("cookTimes", cookTimes);
                     startActivity(i);
+                    //finish();
 
                 }
             }
@@ -94,4 +88,5 @@ public class RecipeSuggestionActivity extends AppCompatActivity {
         Bundle b = new Bundle();
         ClientAPI.generateAccessToken(this, api2Callback, b, update2Callback);
     }
+
 }
