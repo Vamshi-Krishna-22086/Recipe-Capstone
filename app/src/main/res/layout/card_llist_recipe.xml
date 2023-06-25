@@ -18,6 +18,7 @@
             <ImageView
                 android:id="@+id/tile_recipe_image"
                 android:layout_width="match_parent"
+                android:scaleType="centerCrop"
                 android:src="@drawable/burger"
                 android:layout_height="match_parent"/>
 
@@ -56,6 +57,7 @@
                     android:layout_height="20dp"/>
 
                 <TextView
+                    android:id="@+id/tile_recipe_cook_time"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"

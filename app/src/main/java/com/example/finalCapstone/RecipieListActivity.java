@@ -87,40 +87,46 @@ public class RecipieListActivity extends AppCompatActivity {
                     temp=temp+s2.get(j)+"%";
 
                   String[] arr=temp.split("%");
+
+                //Log.i("tarun", String.valueOf(s2_id.size()));
+                  Intent suggestion = new Intent(getApplicationContext(),RecipeSuggestionActivity.class);
+                  suggestion.putStringArrayListExtra("recipe_ids",s2_id);
+                  startActivity(suggestion);
+
 //                for(int i=0;i<arr.length;i++)
 //                {
 //                    Log.d("Varun",arr[i]);
 //                }
-                ArrayAdapter<String> adapter= new ArrayAdapter<String>(RecipieListActivity.this, android.R.layout.simple_dropdown_item_1line ,arr);
-                lv.setAdapter(adapter);
-                lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                        //Toast.makeText(RecipieListActivity.this,String.valueOf(id), Toast.LENGTH_SHORT).show();
-                        Intent i= new Intent(RecipieListActivity.this,RecipeDetailActivity.class);
-                        i.putExtra("id",s2_id.get(position));
-                        startActivity(i);
-
-
-                    }
-                });
+//                ArrayAdapter<String> adapter= new ArrayAdapter<String>(RecipieListActivity.this, android.R.layout.simple_dropdown_item_1line ,arr);
+//                lv.setAdapter(adapter);
+//                lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//                    @Override
+//                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//
+//                        //Toast.makeText(RecipieListActivity.this,String.valueOf(id), Toast.LENGTH_SHORT).show();
+//                        Intent i= new Intent(RecipieListActivity.this,RecipeDetailActivity.class);
+//                        i.putExtra("id",s2_id.get(position));
+//                        startActivity(i);
+//
+//
+//                    }
+//                });
 
                 //data.setText(temp);
                 Log.i("names", "final: ***"+names.get(1)+" "+s2.size()+" "+s1.size());
             }
         };
-        ClientAPI.UpdateCallback update2Callback = new ClientAPI.UpdateCallback() {
-            @Override
-            public void onSuccess(Bundle result) {
-                String ss="";
-// String x=result.getString("recipe_title");
-                //ss=ss+"recipe title: "+result.getString("0")+"\nsubregion: "+result.getString("1");
-                ss=ss+"recipe title: "+result.getString("0")+"\nsubregion: "+result.getString("1")+"\ntotal time: "+result.getString("2")+"\nservings:"+result.getString("3")+"\ncalories:"+result.getString("4")+"\nprocesses:"+result.getString("5")+"\nutensils:"+result.getString("6");
-                data2.setText(ss);
-                Log.i("recipeinfo", "before: "+ss);
-            }
-        };
+//        ClientAPI.UpdateCallback update2Callback = new ClientAPI.UpdateCallback() {
+//            @Override
+//            public void onSuccess(Bundle result) {
+//                String ss="";
+//// String x=result.getString("recipe_title");
+//                //ss=ss+"recipe title: "+result.getString("0")+"\nsubregion: "+result.getString("1");
+//                ss=ss+"recipe title: "+result.getString("0")+"\nsubregion: "+result.getString("1")+"\ntotal time: "+result.getString("2")+"\nservings:"+result.getString("3")+"\ncalories:"+result.getString("4")+"\nprocesses:"+result.getString("5")+"\nutensils:"+result.getString("6");
+//                data2.setText(ss);
+//                Log.i("recipeinfo", "before: "+ss);
+//            }
+//        };
         Bundle b =new Bundle();
         Bundle bt =new Bundle();
         ClientAPI.generateAccessToken(this, api1Callback,bt,updateCallback);
